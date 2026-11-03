@@ -1,0 +1,11 @@
+node_modules/
+.expo/
+.expo-home/
+.npm-cache/
+.tmp/
+dist/
+coverage/
+*.tsbuildinfo
+android/
+ios/
+

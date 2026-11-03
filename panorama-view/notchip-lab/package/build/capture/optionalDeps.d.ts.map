@@ -1,0 +1,1 @@
+{"version":3,"file":"optionalDeps.d.ts","sourceRoot":"","sources":["../../src/capture/optionalDeps.ts"],"names":[],"mappings":"AAAA;;;;;;;;;GASG;AAqBH,kFAAkF;AAClF,wBAAgB,kBAAkB,IAAI,IAAI,CAUzC;AAQD,MAAM,MAAM,YAAY,GAAG;IACzB,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,CAAC;IACf,IAAI,EAAE,MAAM,CAAC;CACd,CAAC;AAoBF;;;;GAIG;AACH,wBAAgB,eAAe,IAAI,YAAY,CAQ9C"}

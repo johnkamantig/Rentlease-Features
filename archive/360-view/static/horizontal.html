@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Horizontal panorama preview</title>
+  <link rel="stylesheet" href="/horizontal.css">
+</head>
+<body>
+  <main>
+    <h1>Horizontal panorama preview</h1>
+    <p>View a stitched image without wrapping or stretching it into a sphere. This page does not stitch photos.</p>
+    <label for="imageInput">Choose a still JPEG, PNG or WebP (up to 25 MiB)</label>
+    <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp">
+    <button id="demoButton" type="button">Load synthetic test image</button>
+    <p id="message" role="status" aria-live="polite">Files are processed on this computer only.</p>
+    <section id="viewerShell" aria-label="Horizontal image viewer" aria-busy="false">
+      <div class="controls">
+        <button id="zoomIn" type="button" disabled>Zoom in</button>
+        <button id="zoomOut" type="button" disabled>Zoom out</button>
+        <button id="fit" type="button" disabled>Fit image</button>
+        <button id="fullscreenButton" type="button" aria-pressed="false">Fullscreen</button>
+        <span id="zoomLevel"></span>
+      </div>
+      <div id="loading" role="status" hidden>Loading image…</div>
+      <div id="viewport" tabindex="0" role="region" aria-label="Image. Drag to pan, pinch or use buttons to zoom." aria-describedby="help">
+        <div id="imageSpace"><img id="photo" alt="Selected horizontal room panorama" hidden draggable="false"></div>
+      </div>
+      <p id="viewerName">No image selected</p>
+    </section>
+    <p id="help">Drag or swipe to pan. Pinch or use zoom buttons. With the image focused, use arrow keys, + / −, and 0 to fit. Escape exits expanded view.</p>
+    <p id="stats"></p>
+    <p>Original proportions are preserved. Image dimensions do not establish projection, stitching quality or room coverage.</p>
+    <a href="/">Existing Pannellum viewer for genuine full-sphere equirectangular images</a>
+  </main>
+  <script src="/horizontal.js"></script>
+</body>
+</html>

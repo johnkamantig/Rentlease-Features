@@ -1,0 +1,2 @@
+# Keep official release bytes / SHA-256 hashes stable with Windows autocrlf.
+static/vendor/pannellum-2.5.7/* -text

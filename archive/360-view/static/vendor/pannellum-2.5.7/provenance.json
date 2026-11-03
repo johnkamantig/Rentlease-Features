@@ -1,0 +1,11 @@
+{
+  "version": "2.5.7",
+  "source": "https://github.com/mpetroff/pannellum/releases/download/2.5.7/pannellum-2.5.7.zip",
+  "archive_sha256": "de768a7999b65a890a889c85b923677da77df7c06900ae1a1493a24671f314c3",
+  "files": {
+    "COPYING": "e20b384f83f8f580d69e32d2419e093d777830689b3ab48cafbe4284b6ebc3c1",
+    "pannellum.css": "da0906e704524cca414ce6160c7be218048dcdd0c13fafa84184f6ea0b084785",
+    "pannellum.js": "51b8df674333612adbd807b6f47940d4d7aa07317d949d3f1314f84de965fc3c",
+    "VERSION": "331dce932ab40edd483650d8888f2aa77ceddb6788c488c442e76eb8278b009b"
+  }
+}

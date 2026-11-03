@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>RentLease — 360° Property Preview</title>
+  <link rel="stylesheet" href="/vendor/pannellum-2.5.7/pannellum.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar"><div class="brand">RentLease <span>360° Lab</span></div><div class="tag">LOCAL PROTOTYPE</div></header>
+  <main>
+    <p><a href="/horizontal.html">Open the horizontal panorama viewer (flat pan and zoom)</a></p>
+    <section class="intro"><p class="eyebrow">PROPERTY VIEW EXPERIMENT</p><h1>Explore a room from your phone.</h1>
+      <p>Upload a genuine <strong>2:1 full-sphere panorama</strong>, then swipe to explore it. Python optimizes the image locally before preview.</p></section>
+    <section class="workspace">
+      <div id="viewerShell" class="viewer-shell" role="region" aria-label="360-degree panorama viewer" aria-busy="false">
+        <div class="viewer-stage">
+          <div id="panorama" tabindex="0" aria-label="Panorama. Use arrow keys to look around and plus or minus to zoom." aria-describedby="viewerHelp"><div class="placeholder"><div class="circle">360°</div><p>Choose a photo sphere or load the test grid.</p></div></div>
+          <div id="loading" class="loading" role="status" hidden>Loading panorama...</div>
+        </div>
+        <div class="viewer-bottom"><span id="viewerName">No panorama selected</span><span>Swipe to look around · Pinch to zoom</span></div>
+        <div class="viewer-controls" role="group" aria-label="Viewer controls">
+          <button id="zoomIn" type="button" disabled aria-controls="panorama">Zoom in</button>
+          <button id="zoomOut" type="button" disabled aria-controls="panorama">Zoom out</button>
+          <button id="fullscreenButton" type="button" aria-controls="viewerShell" aria-pressed="false">Fullscreen</button>
+        </div>
+        <p id="viewerHelp" class="viewer-help">Focus the panorama, then use arrow keys to look around and + / − to zoom. Escape exits expanded view.</p>
+      </div>
+      <aside class="panel">
+        <p class="panel-eyebrow">01 / LOAD IMAGE</p><h2>Choose your panorama</h2>
+        <label class="upload" for="imageInput"><span class="upload-icon">↑</span><strong>Choose a 360° image</strong><small>Still JPEG, PNG or WebP · Maximum 25 MiB input</small></label>
+        <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp">
+        <button id="demoButton" type="button" class="secondary">Try the 360° test grid</button>
+        <p class="helper">A 2:1 aspect ratio cannot prove full-sphere coverage. Use a genuine equirectangular photo sphere; maximum 40 million pixels.</p>
+        <p id="message" class="message" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div id="stats" class="stats" hidden><p class="panel-eyebrow">02 / PROCESSED RESULT</p><div id="statsText"></div></div>
+        <div class="disclaimer">Demo only · files stored on this computer · no Supabase uploads · no database changes.</div>
+      </aside>
+    </section>
+  </main>
+  <script src="/vendor/pannellum-2.5.7/pannellum.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

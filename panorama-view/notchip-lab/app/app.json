@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "RentLease Sweep Lab",
+    "slug": "rentlease-notchip-lab",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "android": { "package": "com.rentlease.notchiplab" },
+    "plugins": [["expo-camera", { "cameraPermission": "Capture a local room sweep.", "recordAudioAndroid": false, "barcodeScannerEnabled": false }], "expo-sensors"]
+  }
+}

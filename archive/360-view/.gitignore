@@ -1,0 +1,6 @@
+.venv/
+.rollback/
+__pycache__/
+*.py[cod]
+uploads/*
+!uploads/.gitkeep

@@ -1,0 +1,41 @@
+{
+  "apk": "artifacts/rentlease-sweep-lab-debug-20261030-202519.apk",
+  "bytes": 69578193,
+  "sha256": "5aa62bc039effda72129c0067f537841a61cc2cda585b18344d33a6ecf91cd4c",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "nativeLibraryCount": 18,
+  "panostitcherElfLoadAlignments": [
+    16384,
+    16384,
+    16384
+  ],
+  "nativeBuild": "PASS",
+  "successfulBuildAttemptSeconds": 234,
+  "physicalDeviceConnected": false,
+  "nativeRuntimeTested": false,
+  "realRoomCaptures": 0,
+  "stitchingMs": null,
+  "captureMs": null,
+  "peakMemoryBytes": null,
+  "accepted360": false,
+  "pannellumModuleOutputValidated": false,
+  "tests": {
+    "feasibility": 21,
+    "pythonPreserved": 82,
+    "viewerUnit": 27,
+    "viewerBrowser": 8
+  },
+  "mappedBuildPass": true,
+  "mappedBuildSeconds": 156,
+  "originalApk": {
+    "path": "artifacts\\rentlease-sweep-lab-debug.apk",
+    "sha256": "972989dcd5a6399d86fa3b2ef2cc9625271e87fb0790d30bef8239ae9d77b6a4"
+  },
+  "documentedNpmBuildSeconds": 114,
+  "consecutiveMappedApksIdentical": true,
+  "repeatBuildPass": true,
+  "documentedBuildExit": 0,
+  "finalBuildLog": "app/native-build-final-exit.log"
+}

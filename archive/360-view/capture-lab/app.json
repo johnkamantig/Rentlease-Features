@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "RentLease Capture Lab",
+    "slug": "rentlease-capture-lab",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "android": {
+      "package": "com.rentlease.capturelab",
+      "allowBackup": false,
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow RentLease Capture Lab to photograph this room for your local capture set.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "Allow approximate motion feedback while photographing the room."
+        }
+      ],
+      "expo-sharing"
+    ]
+  }
+}

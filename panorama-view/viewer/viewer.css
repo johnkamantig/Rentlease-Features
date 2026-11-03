@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; font-family: system-ui, sans-serif; }
+body { display: flex; flex-direction: column; height: 100dvh; background: #fff; color: #202020; }
+header { padding: 10px 14px; flex: none; }
+h1 { margin: 0 0 8px; font-size: 18px; font-weight: 600; }
+.examples, form { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 8px; }
+label { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 14px; }
+input { max-width: 240px; }
+button { padding: 7px 10px; cursor: pointer; }
+.examples span, .hint { font-size: 13px; color: #555; }
+p { margin: 6px 0 0; font-size: 14px; }
+#status[data-state="error"] { color: #a11616; }
+#panorama { flex: 1 0 240px; width: 100%; min-height: 240px; position: relative; background: #eee; touch-action: none; }
+#panorama:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #145ac2; outline-offset: 2px; }

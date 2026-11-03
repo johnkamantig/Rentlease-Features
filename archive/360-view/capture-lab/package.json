@@ -1,0 +1,30 @@
+{
+  "name": "rentlease-capture-lab",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start --lan",
+    "android": "expo start --android --lan",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "bundle:android": "expo export --platform android --output-dir dist/android"
+  },
+  "dependencies": {
+    "expo": "~58.0.20",
+    "expo-camera": "~58.0.13",
+    "expo-file-system": "~58.0.12",
+    "expo-sensors": "~58.0.4",
+    "expo-sharing": "~58.0.20",
+    "react": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-safe-area-context": "~5.10.1"
+  },
+  "devDependencies": {
+    "@types/react": "~19.3.0",
+    "typescript": "~6.0.3",
+    "tsx": "^4.20.0",
+    "@types/node": "^24.0.0"
+  }
+}

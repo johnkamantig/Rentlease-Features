@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "output": "C:\\Users\\kaman\\Rentlease-Features\\rentlease_panorama_360_revised_plan\\panorama-view\\output\\synthetic-1793284508583133900\\synthetic_360.jpg",
+  "projection": "partial_equirectangular",
+  "horizontal_coverage_deg": 360,
+  "vertical_coverage_deg": 68.671875,
+  "vertical_offset_deg": 0.11718749999999999,
+  "vertical_calibration": "fixed supplied intrinsics; square pixels; first-frame pitch reference",
+  "projection_diagnostics": {
+    "wrap_mean_absolute_difference": 12.372014045715332,
+    "wrap_threshold": 43.627644538879395,
+    "overlaps": [
+      {
+        "from": 0,
+        "to": 1,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.6666666666666665
+      },
+      {
+        "from": 17,
+        "to": 0,
+        "median_rgb_difference": 1.0,
+        "p90_rgb_difference": 2.3333333333333335
+      }
+    ],
+    "source_mask_coverage_fraction": 1.0,
+    "periodic_padding_px": 64
+  },
+  "width_px": 1536,
+  "height_px": 293,
+  "bytes": 249498,
+  "input_count": 18,
+  "processing_seconds": 8.261,
+  "sha256": "d24b8a9251eae431eccd66d558769a6af3c24719c4cd31ca7e5530dadb366b61",
+  "coverage_validation_status": "verified_calibrated_rotation_model",
+  "closure_verified": true,
+  "diagnostics": {
+    "signed_turn_deg": 360.0,
+    "neighbor_steps_deg": [
+      19.999817415204348,
+      20.00082015991211,
+      19.99938201904297,
+      19.99948501586914,
+      20.000350952148438,
+      20.00048065185547,
+      20.000442504882812,
+      19.999374389648438,
+      19.99981689453125,
+      19.99969482421875,
+      20.000732421875,
+      20.00011444091797,
+      20.000411987304688,
+      19.99962615966797,
+      20.00042724609375,
+      20.00021743774414,
+      19.999786376953125,
+      19.999019102129637
+    ],
+    "raw_turn_deg": 360.05791191135773,
+    "raw_closure_error_deg": 0.058272622425562644,
+    "pairs": [
+      {
+        "from": 0,
+        "to": 1,
+        "inliers": 957,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2429684852592344,
+        "reprojection_p95_px": 0.19685021844477651
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "inliers": 983,
+        "inlier_ratio": 1.0,
+        "confidence": 3.245295477055134,
+        "reprojection_p95_px": 0.21768343544802687
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "inliers": 963,
+        "inlier_ratio": 1.0,
+        "confidence": 3.243516335466487,
+        "reprojection_p95_px": 0.2027202974302622
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "inliers": 987,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2456428806313715,
+        "reprojection_p95_px": 0.20365276744788066
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "inliers": 956,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2428765264586157,
+        "reprojection_p95_px": 0.19862913815363803
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "inliers": 959,
+        "inlier_ratio": 1.0,
+        "confidence": 3.243151843084207,
+        "reprojection_p95_px": 0.20876343280378684
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "inliers": 959,
+        "inlier_ratio": 1.0,
+        "confidence": 3.243151843084207,
+        "reprojection_p95_px": 0.22443389186174606
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "inliers": 974,
+        "inlier_ratio": 1.0,
+        "confidence": 3.244503664223851,
+        "reprojection_p95_px": 0.20088517969102548
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "inliers": 948,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2421340629274966,
+        "reprojection_p95_px": 0.18911604306912627
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "inliers": 968,
+        "inlier_ratio": 1.0,
+        "confidence": 3.243967828418231,
+        "reprojection_p95_px": 0.20697084762042722
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "inliers": 917,
+        "inlier_ratio": 1.0,
+        "confidence": 3.239138113740728,
+        "reprojection_p95_px": 0.21972052041763046
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "inliers": 955,
+        "inlier_ratio": 1.0,
+        "confidence": 3.242784380305603,
+        "reprojection_p95_px": 0.20841396273177334
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "inliers": 978,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2448573324485737,
+        "reprojection_p95_px": 0.2151217291111276
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "inliers": 909,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2383327395796226,
+        "reprojection_p95_px": 0.22545252970841828
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "inliers": 934,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2408049965301875,
+        "reprojection_p95_px": 0.19889044114162016
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "inliers": 924,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2398316970546985,
+        "reprojection_p95_px": 0.20826124760613662
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "inliers": 1010,
+        "inlier_ratio": 1.0,
+        "confidence": 3.247588424437299,
+        "reprojection_p95_px": 0.20792980094144112
+      },
+      {
+        "from": 17,
+        "to": 0,
+        "inliers": 986,
+        "inlier_ratio": 1.0,
+        "confidence": 3.2455562870309413,
+        "reprojection_p95_px": 0.1864206165796628
+      }
+    ],
+    "calibration_source": "Synthetic perspective renderer: 320x480, f=320/(2*tan(25 degrees)); not a phone calibration",
+    "calibration_model": "rectilinear_square_pixels_centered",
+    "horizontal_fov_deg": 50
+  },
+  "jpeg_seam_diagnostics": {
+    "wrap_mean_absolute_difference": 15.341297149658203,
+    "wrap_threshold": 34.6730375289917
+  },
+  "warnings": [
+    "Automated model checks do not replace real-room visual review for parallax, mirrors or moving objects.",
+    "Vertical geometry depends on the supplied calibration and first-frame pitch reference."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["ExpoPanoramicStitcherModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.panoramicstitcher.ExpoPanoramicStitcherModule"]
+  }
+}
