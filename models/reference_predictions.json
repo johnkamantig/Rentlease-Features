@@ -1,0 +1,56 @@
+[
+  {
+    "request": {
+      "property_type": "condominium",
+      "property_subtype": "condominium",
+      "city": "Quezon City",
+      "furnishing_status": "semi_furnished",
+      "bedrooms": null,
+      "bathrooms": 1.0,
+      "floor_area_sqm": 26.0,
+      "lot_area_sqm": null,
+      "parking_spaces": null,
+      "floor_number": 28.0,
+      "latitude": 14.64746505,
+      "longitude": 121.03680946,
+      "amenities_normalized": "air conditioning|balcony|integral kitchen|internet|concierge|security|swimming pool|gym|built in wardrobe|24 hours security|fire alarm|smoke detector"
+    },
+    "expected_estimated_rent_monthly": 22433.353515625
+  },
+  {
+    "request": {
+      "property_type": "apartment",
+      "property_subtype": "apartment",
+      "city": "Para\u00f1aque",
+      "furnishing_status": "unfurnished",
+      "bedrooms": 3.0,
+      "bathrooms": 1.0,
+      "floor_area_sqm": 114.0,
+      "lot_area_sqm": null,
+      "parking_spaces": 2.0,
+      "floor_number": 107.0,
+      "latitude": 14.4678016,
+      "longitude": 121.0420276,
+      "amenities_normalized": "24 hours security|basketball court|built in wardrobe|garage|electricity|equipped kitchen|fully fenced|integral kitchen|security|water|playground"
+    },
+    "expected_estimated_rent_monthly": 39733.69921875
+  },
+  {
+    "request": {
+      "property_type": "house",
+      "property_subtype": "house",
+      "city": "Calamba",
+      "furnishing_status": "unfurnished",
+      "bedrooms": 3.0,
+      "bathrooms": 2.0,
+      "floor_area_sqm": 69.0,
+      "lot_area_sqm": 195.0,
+      "parking_spaces": 1.0,
+      "floor_number": 2.0,
+      "latitude": 14.1948762,
+      "longitude": 121.1597364,
+      "amenities_normalized": "24 hours security|basketball court|integral kitchen|garage|club house|electricity|fully fenced|garden|internet|shower rooms|swimming pool|water|wifi"
+    },
+    "expected_estimated_rent_monthly": 26632.958984375
+  }
+]
