@@ -107,7 +107,7 @@ const consumerTypes = `
   const listings: readonly RentalListing[] = [];
   const local: NearbyListing[] = searchNearbyListings(listings, options);
   // @ts-expect-error unsupported radius
-  const invalidRadius: RadiusKm = 2;
+  const invalidRadius: RadiusKm = 21;
   // @ts-expect-error authoritative numeric may be a high precision string
   const lossyDistance: number = mapped[0]!.distanceMeters;
   // @ts-expect-error simulations must be imported from /local

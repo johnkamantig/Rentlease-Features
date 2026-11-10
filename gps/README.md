@@ -71,7 +71,7 @@ interface Coordinates {
   readonly latitude: number;
   readonly longitude: number;
 }
-type RadiusKm = 1 | 3 | 5;
+type RadiusKm = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 interface Pagination {
   readonly limit: number;
   readonly offset: number;
@@ -99,7 +99,7 @@ interface NearbyListing extends RentalListing {
 - Latitude is inclusive from -90 to 90; longitude from -180 to 180.
 - Missing coordinates, numeric strings, booleans, `null`, `NaN`, and infinities are
   rejected. Values are never coerced or wrapped into range.
-- Radius accepts only 1, 3, or 5 kilometers; the default is 3.
+- Radius accepts only an integer from 1 through 20 kilometers; the default is 3.
 - Limit is an integer from 1 to 50, default 20. Zero is invalid.
 - Offset is an integer from 0 to 1000, default 0.
 - Defaults apply to omitted or `undefined` optional values, never `null`.
@@ -393,3 +393,5 @@ gps/
 
 Ignored local directories also include `node_modules/`, `.npm-cache/`, and
 `.test-artifacts/`. All build and test artifacts stay inside this package.
+
+Version 0.1.1: integer radii 1 through 20 km; default 3. RPC servers must deploy the corresponding radius-range update before using newly supported values.

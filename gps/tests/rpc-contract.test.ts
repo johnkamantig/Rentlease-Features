@@ -15,7 +15,7 @@ test('RPC parameters use exact names and resolve established defaults', () => {
   assert.deepEqual(toSearchNearbyListingsRpcParams({ latitude: -90, longitude: 180, radiusKm: 5, limit: 50, offset: 1000 }), {
     p_latitude: -90, p_longitude: 180, p_radius_km: 5, p_limit: 50, p_offset: 1000,
   });
-  for (const radiusKm of [1, 3, 5]) {
+  for (const radiusKm of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]) {
     assert.equal(toSearchNearbyListingsRpcParams({ latitude: 0, longitude: 0, radiusKm, limit: 1, offset: 0 }).p_radius_km, radiusKm);
   }
 });
@@ -24,7 +24,7 @@ test('RPC parameter adapter reuses strict validation with no coercion', () => {
   for (const input of [null, {}, [], { latitude: '0', longitude: 0 }, { latitude: 91, longitude: 0 }, { latitude: 0, longitude: Infinity }]) {
     assert.throws(() => toSearchNearbyListingsRpcParams(input));
   }
-  for (const [field, values] of Object.entries({ radiusKm: [0, 2, 4, 6, null, '3'], limit: [0, 51, 1.5, null, '20'], offset: [-1, 1001, 0.5, null, '0'] })) {
+  for (const [field, values] of Object.entries({ radiusKm: [0, 21, 1.5, null, '3'], limit: [0, 51, 1.5, null, '20'], offset: [-1, 1001, 0.5, null, '0'] })) {
     for (const value of values) assert.throws(() => toSearchNearbyListingsRpcParams({ latitude: 0, longitude: 0, [field]: value }));
   }
 });

@@ -40,14 +40,14 @@ test('coordinates reject values immediately beyond allowed ranges', () => {
   }
 });
 
-test('radius accepts only 1, 3, 5 and defaults to 3', () => {
-  for (const radius of [1, 3, 5]) assert.equal(validateRadiusKm(radius), radius);
+test('radius accepts integers 1 through 20 and defaults to 3', () => {
+  for (const radius of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]) assert.equal(validateRadiusKm(radius), radius);
   assert.equal(validateRadiusKm(), 3);
   assert.equal(validateRadiusKm(undefined), 3);
 });
 
 test('radius rejects unsupported numbers and nonnumbers without coercion', () => {
-  for (const radius of [0, -1, 2, 4, 6, 1.5]) {
+  for (const radius of [0, -1, 21, 100, 1.5]) {
     assert.throws(() => validateRadiusKm(radius), RangeError);
   }
   for (const radius of [null, '3', '', true, {}, [], NaN, Infinity, -Infinity]) {

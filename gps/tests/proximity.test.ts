@@ -16,7 +16,7 @@ function listingAt(meters: number, listingId: string, propertyId = 'shared-prope
   };
 }
 
-for (const radiusKm of [1, 3, 5] as const) {
+for (const radiusKm of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] as const) {
   test(`${radiusKm} km includes the boundary and excludes points beyond numerical tolerance`, () => {
     const meters = radiusKm * 1000;
     const records = [listingAt(meters + 0.001, 'outside'), listingAt(meters, 'boundary'), listingAt(meters - 0.001, 'inside')];
@@ -114,7 +114,7 @@ test('invalid listing containers and identifiers fail explicitly', () => {
 });
 
 test('public search validates options even when there are no listings', () => {
-  for (const options of [{ ...origin, limit: 0 }, { ...origin, offset: 1001 }, { ...origin, radiusKm: 2 }, { latitude: NaN, longitude: 0 }]) {
+  for (const options of [{ ...origin, limit: 0 }, { ...origin, offset: 1001 }, { ...origin, radiusKm: 21 }, { latitude: NaN, longitude: 0 }]) {
     assert.throws(() => searchNearbyListings([], options as SearchOptions));
   }
 });

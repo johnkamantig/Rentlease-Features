@@ -31,10 +31,10 @@ export function validateRadiusKm(value: unknown = 3): RadiusKm {
   if (typeof value !== 'number' || !Number.isFinite(value)) {
     throw new TypeError('radiusKm must be a finite number');
   }
-  if (value !== 1 && value !== 3 && value !== 5) {
-    throw new RangeError('radiusKm must be 1, 3, or 5');
+  if (!Number.isInteger(value) || value < 1 || value > 20) {
+    throw new RangeError('radiusKm must be an integer from 1 through 20');
   }
-  return value;
+  return value as RadiusKm;
 }
 
 export function validatePagination(limit: unknown = 20, offset: unknown = 0): Pagination {
