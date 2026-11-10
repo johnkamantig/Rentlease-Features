@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property Reviews · RentLease Prototype</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script type="module" src="/static/app.js"></script>
+</head>
+<body>
+  <main class="screen">
+    <header class="topbar">
+      <a href="/" aria-label="Back to prototype overview" class="back">←</a>
+      <div><strong>RentLease</strong><span>Property Reviews</span></div>
+      <button id="theme" type="button" aria-label="Switch to dark theme">Dark theme</button>
+    </header>
+    <p class="prototype">Interactive prototype · synthetic reviews only</p>
+    <label class="property-label" for="property">Explore sample data</label>
+    <select id="property" disabled><option>Loading properties…</option></select>
+    <section aria-labelledby="cloud-title">
+      <div class="section-heading"><h1 id="cloud-title">What renters often mention</h1><span id="total"></span></div>
+      <p class="explanation">Bigger words appear in more distinct reviews. Colors are decorative, with no sentiment meaning.</p>
+      <div id="cloud" class="cloud" aria-label="Frequently mentioned words and phrases" aria-busy="true"></div>
+      <p id="cloud-note" class="cloud-note">Choose a word or phrase to read the original reviews.</p>
+    </section>
+    <section aria-labelledby="reviews-title" class="review-section">
+      <div class="section-heading"><h2 id="reviews-title">Original reviews</h2><button id="reset" type="button" hidden>Clear filter</button></div>
+      <p id="status" role="status" aria-live="polite">Loading synthetic reviews…</p>
+      <button id="retry" type="button" hidden>Retry</button>
+      <div id="reviews" aria-busy="true"></div>
+    </section>
+    <footer>English · Filipino · Taglish<br>Original wording, exact matches. “Clean” and “malinis” are separate terms. No ratings or real renter identities are shown.</footer>
+  </main>
+</body>
+</html>

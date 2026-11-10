@@ -1,0 +1,27 @@
+{
+  "properties": [
+    {"id": "demo", "name": "Sample property · multilingual reviews"},
+    {"id": "empty", "name": "Sample property · no published reviews"},
+    {"id": "sparse", "name": "Sample property · insufficient data"}
+  ],
+  "reviews": [
+    {"id":"r01","property_id":"demo","text":"Malinis ang unit, and the parking area is spacious.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r02","property_id":"demo","text":"Parking is limited and noise from the road can be heard. The water pressure drops at night.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r03","property_id":"demo","text":"Clean, CLEAN, clean! The parking area is bright. Not quiet during weekends.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r04","property_id":"demo","text":"Malinis at presko. Hindi maingay sa gabi; malakas ang water pressure.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r05","property_id":"demo","text":"The unit is clean and the internet is reliable. Water pressure is steady.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r06","property_id":"demo","text":"Okay ang location, pero walang parking. Hindi tahimik kapag rush hour.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r07","property_id":"demo","text":"Malinis ang hallway. May security sa entrance at presko ang balcony.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r08","property_id":"demo","text":"Good location near shops. Internet is fast, but water pressure is not steady.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r09","property_id":"demo","text":"🏠 MALINIS ang unit! Parking area is shared. Hindi maingay, at may security.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r10","property_id":"demo","text":"Clean hallway, good ventilation. For the sample listing see https://example.invalid/parking or email demo@example.invalid.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r11","property_id":"demo","text":"Mahina ang water pressure minsan. Reliable ang internet; not quiet near the road. Sample contact: 0917-000-0000.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r12","property_id":"demo","text":"Walang parking pero malinis. Presko ang balcony at maganda ang ventilation.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r13","property_id":"demo","text":"Hiddensecret parking swimming pool.","kind":"property","published":true,"visible":false,"moderation_status":"approved"},
+    {"id":"r14","property_id":"demo","text":"Draftsecret clean swimming pool.","kind":"property","published":false,"visible":true,"moderation_status":"approved"},
+    {"id":"r15","property_id":"demo","text":"Moderatedsecret malinis swimming pool.","kind":"property","published":true,"visible":true,"moderation_status":"removed"},
+    {"id":"r16","property_id":"demo","text":"Userfeedbacksecret helpful tenant.","kind":"user","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r17","property_id":"sparse","text":"Tahimik ang paligid.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r18","property_id":"empty","text":"Unpublished sample.","kind":"property","published":false,"visible":true,"moderation_status":"approved"}
+  ]
+}
