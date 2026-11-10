@@ -9,6 +9,8 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from model_adapter import ModelBundle
 
 app = FastAPI(title="RentLease ML API")
+from wordcloud_api import router as wordcloud_router
+app.include_router(wordcloud_router)
 bearer_scheme = HTTPBearer(auto_error=False)
 MODEL_DIR = Path(__file__).resolve().parent / "models"
 model_bundle = ModelBundle.load(MODEL_DIR)
