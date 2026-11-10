@@ -11,6 +11,8 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from xgboost import XGBRegressor
 
 app = FastAPI(title="RentLease ML API")
+from wordcloud_api import router as wordcloud_router
+app.include_router(wordcloud_router)
 bearer_scheme = HTTPBearer(auto_error=False)
 # Load trained model components
 MODEL_DIR = Path(__file__).resolve().parent / "models"
