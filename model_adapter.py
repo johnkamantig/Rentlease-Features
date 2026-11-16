@@ -24,7 +24,7 @@ class ModelBundle:
         if (not isinstance(config, dict)
                 or config.get('representation') != 'shared_apartment_condominium'
                 or config.get('subtype') is not True
-                or config.get('original_type_feature') is not False):
+                or config.get('original_type_feature') is not True):
             raise ValueError('Unsupported model configuration')
         if (metadata['target_transform'] != 'log1p'
                 or metadata['prediction_inverse'] != 'expm1'):
@@ -45,8 +45,8 @@ class ModelBundle:
         self.columns = list(metadata['input_columns'])
         self.vocabulary = list(metadata['amenity_vocabulary'])
         amenity_columns = [f'amenity_{i:03d}' for i in range(len(self.vocabulary))]
-        if (self.categorical != metadata['original_categorical_features'] + ['property_subtype']
-                or self.categorical != ['property_type', 'city', 'furnishing_status', 'property_subtype']
+        if (self.categorical != metadata['original_categorical_features'] + ['property_subtype', 'original_property_type']
+                or self.categorical != ['property_type', 'city', 'furnishing_status', 'property_subtype', 'original_property_type']
                 or metadata['numeric_columns'] != self.numeric + amenity_columns
                 or len(self.columns) != len(metadata['numeric_columns']) + len(self.categorical)
                 or set(self.columns) != set(metadata['numeric_columns'] + self.categorical)):
@@ -120,9 +120,18 @@ class ModelBundle:
         if subtype not in allowed and not (original_type == 'house' and subtype in {'unknown', '', 'nan'}):
             raise ValueError('property_subtype must belong to the selected property type')
         row = {col: np.nan for col in self.columns}
-        row.update(property_type=self.type_mapping[original_type],
-                   property_subtype=subtype, city=category('city'),
-                   furnishing_status=category('furnishing_status'))
+        if original_type == 'apartment_condominium':
+            raise ValueError(
+                'Specify apartment or condominium as property_type'
+            )
+
+        row.update(
+            property_type=self.type_mapping[original_type],
+            original_property_type=original_type,
+            property_subtype=subtype,
+            city=category('city'),
+            furnishing_status=category('furnishing_status'),
+        )
         for name in self.numeric:
             value = features.get(name)
             if value is None or (isinstance(value, str) and not value.strip()):
@@ -151,8 +160,12 @@ class ModelBundle:
         if not isinstance(amenities, list) or not all(isinstance(v, str) for v in amenities):
             raise ValueError('Invalid amenities format')
         selected = {v.strip() for v in amenities if v.strip()}
-        row.update({f'amenity_{i:03d}': (np.nan if missing_amenities else int(term in selected))
-                    for i, term in enumerate(self.vocabulary)})
+        selected = {v.strip().lower() for v in amenities if v.strip()}
+
+        row.update({
+            f'amenity_{i:03d}': int(term in selected)
+            for i, term in enumerate(self.vocabulary)
+        })
         return pd.DataFrame([row], columns=self.columns)
 
     def predict(self, row):

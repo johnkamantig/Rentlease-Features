@@ -42,5 +42,5 @@ def predict(
         "range_min": round(prediction * 0.70, 2),
         "range_max": round(prediction * 1.30, 2),
         "currency": "PHP",
-        "model_version": "development-v1",
-    }
+        "model_version": model_bundle.metadata["training_run_id"],    
+        }
