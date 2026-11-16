@@ -1,13 +1,14 @@
 {
-  "training_run_id": "train_20261106_140356_301784",
-  "cleaning_run_id": "clean_20261103_145130_022013",
+  "training_run_id": "train_combined_20261116_172116_664088",
+  "cleaning_run_id": "clean_low_rent_quality_20261116_171946_373080",
   "configuration": {
-    "name": "Shared APT+CONDO | Subtype Only | Category Balanced=False | Auto Price=0.5",
+    "name": "Shared + original type + balance",
     "representation": "shared_apartment_condominium",
     "subtype": true,
-    "original_type_feature": false,
-    "balanced": false,
-    "price_weight_strength": 0.5
+    "original_type_feature": true,
+    "balanced": true,
+    "price_weight_strength": 0.0,
+    "out_region_weight": 1.0
   },
   "model_types": [
     "house",
@@ -104,13 +105,21 @@
     "amenity_064",
     "amenity_065",
     "amenity_066",
-    "amenity_067"
+    "amenity_067",
+    "amenity_068",
+    "amenity_069",
+    "amenity_070",
+    "amenity_071",
+    "amenity_072",
+    "amenity_073",
+    "amenity_074"
   ],
   "categorical_columns": [
     "property_type",
     "city",
     "furnishing_status",
-    "property_subtype"
+    "property_subtype",
+    "original_property_type"
   ],
   "input_columns": [
     "bedrooms",
@@ -125,6 +134,7 @@
     "city",
     "furnishing_status",
     "property_subtype",
+    "original_property_type",
     "amenity_000",
     "amenity_001",
     "amenity_002",
@@ -192,7 +202,14 @@
     "amenity_064",
     "amenity_065",
     "amenity_066",
-    "amenity_067"
+    "amenity_067",
+    "amenity_068",
+    "amenity_069",
+    "amenity_070",
+    "amenity_071",
+    "amenity_072",
+    "amenity_073",
+    "amenity_074"
   ],
   "amenity_vocabulary": [
     "24 hours security",
@@ -205,6 +222,9 @@
     "built in wardrobe",
     "cctv",
     "cellar",
+    "children's area",
+    "cistern",
+    "cleaning room",
     "club house",
     "concierge",
     "deck",
@@ -227,6 +247,7 @@
     "guardhouse",
     "gym",
     "heating",
+    "hot tub",
     "integral kitchen",
     "intercom",
     "internet",
@@ -240,9 +261,11 @@
     "multi purpose lawn",
     "multipurpose room",
     "natural gas",
+    "office",
     "office room",
     "open space",
     "panoramic view",
+    "patio",
     "playground",
     "powder room",
     "roof garden",
@@ -258,6 +281,7 @@
     "swimming pool",
     "tennis court",
     "terrace",
+    "utility room",
     "video cable",
     "water",
     "water tank",
@@ -273,7 +297,6 @@
     "scikit_learn": "1.6.1",
     "xgboost": "3.4.1",
     "joblib": "1.6.0",
-    "matplotlib": "3.10.0",
     "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
   }
 }

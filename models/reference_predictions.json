@@ -2,55 +2,55 @@
   {
     "request": {
       "property_type": "condominium",
-      "property_subtype": "condominium",
+      "property_subtype": "studio",
       "city": "Quezon City",
-      "furnishing_status": "semi_furnished",
-      "bedrooms": null,
+      "furnishing_status": "unfurnished",
+      "bedrooms": 1.0,
       "bathrooms": 1.0,
-      "floor_area_sqm": 26.0,
+      "floor_area_sqm": 24.0,
       "lot_area_sqm": null,
       "parking_spaces": null,
-      "floor_number": 28.0,
-      "latitude": 14.64746505,
-      "longitude": 121.03680946,
-      "amenities_normalized": "air conditioning|balcony|integral kitchen|internet|concierge|security|swimming pool|gym|built in wardrobe|24 hours security|fire alarm|smoke detector"
+      "floor_number": null,
+      "latitude": 14.735913,
+      "longitude": 121.064172,
+      "amenities_normalized": "air conditioning|garage|playground|garden|gym|internet|lift|security|swimming pool|24 hours security|cctv"
     },
-    "expected_estimated_rent_monthly": 22433.353515625
+    "expected_estimated_rent_monthly": 17876.681640625
   },
   {
     "request": {
       "property_type": "apartment",
       "property_subtype": "apartment",
-      "city": "Para\u00f1aque",
+      "city": "Muntinlupa",
       "furnishing_status": "unfurnished",
-      "bedrooms": 3.0,
+      "bedrooms": 1.0,
       "bathrooms": 1.0,
-      "floor_area_sqm": 114.0,
+      "floor_area_sqm": 25.0,
       "lot_area_sqm": null,
-      "parking_spaces": 2.0,
-      "floor_number": 107.0,
-      "latitude": 14.4678016,
-      "longitude": 121.0420276,
-      "amenities_normalized": "24 hours security|basketball court|built in wardrobe|garage|electricity|equipped kitchen|fully fenced|integral kitchen|security|water|playground"
+      "parking_spaces": 7.0,
+      "floor_number": null,
+      "latitude": 14.42556468,
+      "longitude": 121.0424666,
+      "amenities_normalized": "garage|wifi"
     },
-    "expected_estimated_rent_monthly": 39733.69921875
+    "expected_estimated_rent_monthly": 15656.3125
   },
   {
     "request": {
       "property_type": "house",
       "property_subtype": "house",
-      "city": "Calamba",
-      "furnishing_status": "unfurnished",
-      "bedrooms": 3.0,
-      "bathrooms": 2.0,
-      "floor_area_sqm": 69.0,
-      "lot_area_sqm": 195.0,
-      "parking_spaces": 1.0,
+      "city": "Lipa",
+      "furnishing_status": "furnished",
+      "bedrooms": 4.0,
+      "bathrooms": 3.0,
+      "floor_area_sqm": 220.0,
+      "lot_area_sqm": 165.0,
+      "parking_spaces": 2.0,
       "floor_number": 2.0,
-      "latitude": 14.1948762,
-      "longitude": 121.1597364,
-      "amenities_normalized": "24 hours security|basketball court|integral kitchen|garage|club house|electricity|fully fenced|garden|internet|shower rooms|swimming pool|water|wifi"
+      "latitude": 13.9665561,
+      "longitude": 121.183064,
+      "amenities_normalized": null
     },
-    "expected_estimated_rent_monthly": 26632.958984375
+    "expected_estimated_rent_monthly": 60718.77734375
   }
 ]
