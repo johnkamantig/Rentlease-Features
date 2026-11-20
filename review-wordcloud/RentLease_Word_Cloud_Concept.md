@@ -74,9 +74,9 @@ The processing pipeline should:
 1. **Select eligible property reviews** for one property. Include only reviews that are published/visible and valid under the final review-visibility rules.
 2. **Normalize text for matching** using Unicode normalization and case folding while preserving the original review for display.
 3. **Tokenize** English, Filipino, and Taglish review text.
-4. **Filter noise** such as URLs, contact information, irrelevant symbols, and configurable English/Filipino stopwords. Preserve meaningful negation (`not`, `hindi`, `walang`). Do not connect words across removed stopwords or other invalid boundaries in a way that creates misleading phrases.
-5. **Automatically extract unigrams and bigrams**, without a hardcoded list of property topics. Previously unseen terms should be discoverable from reviews.
-6. **Count distinct reviews per term**. Repeating `parking` several times within one review counts as **one review mention**, not multiple mentions.
+4. **Filter noise** such as URLs, contact information, irrelevant symbols, and configurable English/Filipino stopwords. Preserve meaningful negation (`not`, `hindi`, `walang`). Words are never connected across punctuation, line breaks, contact information, or other invalid boundaries. Bigrams are formed **after** stopword removal, so `room was very clean` produces `room clean`; the highlighted span still covers the original wording.
+5. **Automatically extract unigrams and bigrams** with scikit-learn `CountVectorizer` (`ngram_range=(1, 2)`, `binary=True`, `min_df=2`), without a hardcoded list of property topics. Previously unseen terms should be discoverable from reviews.
+6. **Count distinct reviews per term** (CountVectorizer-based document frequency; counts only, no TF-IDF). Repeating `parking` several times within one review counts as **one review mention**, not multiple mentions.
 7. **Associate each term with its matching review IDs** so tapping it retrieves the correct original reviews.
 8. **Rank and limit terms** using configurable minimum-review frequency and maximum cloud size. Use stable, deterministic tie-breaking so the same input yields the same output.
 9. **Return structured JSON** for the frontend to display; do not require the Android app to execute Python.
