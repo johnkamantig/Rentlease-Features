@@ -25,8 +25,10 @@ class ProcessorTests(unittest.TestCase):
 
     def test_boundaries_and_contact_noise(self):
         terms = self.terms([review("1", "clean ang unit. parking https://example.test/contact area; bright name@example.test room; quiet 0917-123-4567 hall; airy, balcony; safe\nentrance")])
-        for forbidden in ["clean unit", "unit parking", "parking area", "bright room", "quiet hall", "airy balcony", "safe entrance", "example", "contact"]:
+        for forbidden in ["unit parking", "parking area", "bright room", "quiet hall", "airy balcony", "safe entrance", "example", "contact"]:
             self.assertNotIn(forbidden, terms)
+        # Stopwords no longer break adjacency: 'ang' is removed, then the bigram forms.
+        self.assertIn("clean unit", terms)
 
     def test_unicode_original_spans_and_no_substrings(self):
         text = "🏠 ＣＬＥＡＮ, clean! cleaning; Cafe\u0301 café; Water\tPRESSURE"
