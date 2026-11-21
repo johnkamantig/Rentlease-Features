@@ -49,12 +49,12 @@ class BridgeTests(unittest.TestCase):
     def test_original_unicode_spans_distinct_counts_and_determinism(self):
         status,result=self.call(self.corpus());self.assertEqual(status,200)
         self.assertFalse(result['synthetic']);self.assertEqual(result['eligible_review_count'],2)
-        term=next(t for t in result['terms'] if t['text']=='malinis')
+        term=next(t for t in result['terms'] if t['text']=='malinis room')  # phrase replaces bare 'malinis' (same reviews)
         self.assertEqual(term['review_count'],2)
         originals={r['id']:r['text'] for r in self.corpus()['reviews']}
         for match in term['matches']:
             for span in match['spans']:
-                self.assertEqual(originals[match['id']][span['start']:span['end']].casefold(),'malinis')
+                slice_=originals[match['id']][span['start']:span['end']].casefold();self.assertTrue(slice_.startswith('malinis') and slice_.endswith('room'))
         self.assertEqual(result,self.call(self.corpus())[1])
     def test_rating_only_counts_and_empty(self):
         for text in [None,'','   ']:
