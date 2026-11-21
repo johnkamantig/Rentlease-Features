@@ -167,6 +167,20 @@ class CountVectorizerTests(unittest.TestCase):
         self.assertNotIn("quiet area", terms)
         self.assertEqual(terms, {"quiet": 2})
 
+    def test_taglish_filler_particles_are_filtered_but_meaningful_words_stay(self):
+        filler = ["dito", "doon", "sana", "ba", "pa", "nga", "daw", "ho", "kahit", "pag",
+                  "kapag", "tapos", "saka", "bale"]
+        rows = [review("1", " ".join(f"malinis {w} wifi" for w in filler)),
+                review("2", " ".join(f"malinis {w} wifi" for w in filler[::-1]))]
+        terms = self.texts(rows)
+        for word in filler:
+            self.assertNotIn(word, terms)
+        # With the fillers gone, the content words join across them (and fold into phrases).
+        self.assertEqual(set(terms), {"malinis wifi", "wifi malinis"})
+        # "palagi" and "medyo" can carry meaning ("may tubig palagi", "medyo mahal"): kept.
+        kept = self.texts([review("1", "Medyo mahal, malinis palagi"), review("2", "medyo mahal, malinis palagi")])
+        self.assertEqual(set(kept), {"medyo mahal", "malinis palagi"})
+
 
 if __name__ == "__main__":
     unittest.main()
