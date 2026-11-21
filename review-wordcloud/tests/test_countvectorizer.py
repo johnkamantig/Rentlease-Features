@@ -159,6 +159,14 @@ class CountVectorizerTests(unittest.TestCase):
         # unigrams wifi/fast/parking all share the same reviews as their phrases.
         self.assertEqual(self.texts(rows), {"wifi fast": 2, "fast parking": 2})
 
+    def test_generic_listing_words_place_and_area_are_filtered(self):
+        rows = [review("1", "Nice place, quiet area"), review("2", "Great place and a quiet area")]
+        terms = self.texts(rows)
+        for word in ["place", "area"]:
+            self.assertNotIn(word, terms)
+        self.assertNotIn("quiet area", terms)
+        self.assertEqual(terms, {"quiet": 2})
+
 
 if __name__ == "__main__":
     unittest.main()

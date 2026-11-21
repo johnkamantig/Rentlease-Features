@@ -21,7 +21,7 @@ class ProcessorTests(unittest.TestCase):
                             review("3", "clean")])
         self.assertEqual(terms["clean"]["review_count"], 2)  # repeated "Clean clean" counts once
         self.assertEqual(terms["malinis"]["review_count"], 2)
-        self.assertEqual(terms["parking area"]["review_ids"], ["1", "2"])
+        self.assertEqual(terms["parking"]["review_ids"], ["1", "2"])
         self.assertIn("presko", terms)
 
     def test_boundaries_and_contact_noise(self):
