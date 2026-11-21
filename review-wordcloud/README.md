@@ -42,6 +42,10 @@ Each term maps to a set of review IDs with every occurrence span. Frequency is t
 
 Offsets are **zero-based, end-exclusive Unicode code-point indices**, not UTF-8 bytes or JavaScript UTF-16 units. The browser uses `Array.from(text)` before slicing; a future React Native client must do the same or convert indices. Bigram spans run from the first word's start to the second word's end, including the original separating whitespace and any removed stopwords between them (`Room was very clean` for `room clean`). Text is rendered with `textContent`, never review-supplied HTML. Invalid/out-of-range spans are ignored, overlapping spans are skipped, and missing spans show plain original text. Request generations prevent stale responses from replacing a newer selection.
 
+### Which terms are shown
+
+Terms are unigrams and bigrams counted by document frequency (the number of reviews containing the term). A term needs at least 2 reviews. If a word and a phrase containing it appear in exactly the same reviews, only the phrase is shown. A curated stopword list (English and Filipino/Taglish) removes filler words. Stopwords are removed before bigrams form, so "parking area" becomes `parking`, and "malinis dito wifi" becomes the phrase `malinis wifi`, whose highlight covers the whole span. Nothing is learned: the list is hand-maintained and extended by auditing real reviews.
+
 ## Routes and examples
 
 - `GET /health`: `{"status":"ok","synthetic":true}`
