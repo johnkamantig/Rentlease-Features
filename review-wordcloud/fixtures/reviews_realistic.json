@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {"id": "realistic", "name": "Sample property · realistic English, Filipino and mixed reviews"}
+  ],
+  "reviews": [
+    {"id":"r01","property_id":"realistic","text":"Malinis yung room and mabait ang landlord. Fast ang wifi, sulit sa price.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r02","property_id":"realistic","text":"Good place for students. Wifi is fast, quiet at night, and the landlord is very approachable.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r03","property_id":"realistic","text":"Okay lang yung place, medyo mahal ang rent pero malinis naman. Mabilis ang wifi.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r04","property_id":"realistic","text":"Quiet neighborhood, near jeepney and 7-eleven. Landlord is responsive. Nice place overall!","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r05","property_id":"realistic","text":"Sobrang tahimik dito, perfect for studying. Malinis ang CR at may tubig palagi.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r06","property_id":"realistic","text":"The room is small but clean. Wifi is slow sometimes. Price is reasonable for the area.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r07","property_id":"realistic","text":"Maingay sa gabi kasi malapit sa kalsada. Hindi ko nagustuhan ang noise. Pero mabait yung landlord.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r08","property_id":"realistic","text":"Great location, near the school and market. Malinis at maayos ang buong unit. Would recommend!","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r09","property_id":"realistic","text":"Hindi malinis yung CR when we moved in, pero nilinis naman agad ng landlord. Wifi works fine.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r10","property_id":"realistic","text":"Affordable price and quiet area. The place is safe and the owner is friendly.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r11","property_id":"realistic","text":"Nice and clean room, strong wifi, kind landlord. Good value for the price.","kind":"property","published":true,"visible":true,"moderation_status":"approved"},
+    {"id":"r12","property_id":"realistic","text":"Tahimik at safe ang lugar, malapit sa tindahan. Okay naman ang wifi, medyo mahal lang ang kuryente.","kind":"property","published":true,"visible":true,"moderation_status":"approved"}
+  ]
+}
