@@ -169,7 +169,19 @@ class Processor:
                 index.setdefault(term, {})[row["id"]] = spans
         # CountVectorizer's document frequency is authoritative; drop a term if the span
         # finder ever disagrees rather than show a count that does not match its highlights.
-        return rows, {t: m for t, m in index.items() if len(m) == counts[t]}, usable
+        index = {t: m for t, m in index.items() if len(m) == counts[t]}
+        return rows, self._drop_redundant(index), usable
+
+    @staticmethod
+    def _drop_redundant(index):
+        """Keep the phrase when a word and a bigram containing it occur in the same reviews.
+
+        A bigram's reviews are always a subset of its words' reviews, so equal counts mean
+        equal review sets. Dropping the bare word frees cloud slots for different terms.
+        """
+        redundant = {word for term in index if " " in term
+                     for word in term.split() if word in index and len(index[word]) == len(index[term])}
+        return {t: m for t, m in index.items() if t not in redundant}
 
     @staticmethod
     def metadata(term, matches, maximum):

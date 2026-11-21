@@ -17,8 +17,9 @@ class ProcessorTests(unittest.TestCase):
 
     def test_multilingual_unseen_and_distinct_mentions(self):
         terms = self.terms([review("1", "Clean clean MALINIS parking area"),
-                            review("2", "Malinis ang unit and parking area; presko")])
-        self.assertEqual(terms["clean"]["review_count"], 1)
+                            review("2", "Malinis ang unit and parking area; presko"),
+                            review("3", "clean")])
+        self.assertEqual(terms["clean"]["review_count"], 2)  # repeated "Clean clean" counts once
         self.assertEqual(terms["malinis"]["review_count"], 2)
         self.assertEqual(terms["parking area"]["review_ids"], ["1", "2"])
         self.assertIn("presko", terms)
@@ -32,7 +33,9 @@ class ProcessorTests(unittest.TestCase):
 
     def test_unicode_original_spans_and_no_substrings(self):
         text = "🏠 ＣＬＥＡＮ, clean! cleaning; Cafe\u0301 café; Water\tPRESSURE"
-        rows = [review("1", text)]
+        # Review 2 gives "clean" and "café" occurrences outside any phrase, so the
+        # word-vs-phrase rule keeps them as separate terms.
+        rows = [review("1", text), review("2", "clean café")]
         terms = self.terms(rows)
         result = self.processor.matching("p", terms["clean"]["id"], rows)
         spans = result["reviews"][0]["spans"]

@@ -49,7 +49,7 @@ class CountVectorizerTests(unittest.TestCase):
         for stop in ["ang", "ay", "sa", "at"]:
             self.assertNotIn(stop, terms)
         self.assertIn("hindi maingay", terms)
-        self.assertIn("hindi", terms)
+        self.assertNotIn("hindi", terms)  # same two reviews as "hindi maingay": phrase wins
         self.assertIn("unit", terms)
         self.assertNotIn("walang", terms)  # only in one review
 
@@ -128,6 +128,36 @@ class CountVectorizerTests(unittest.TestCase):
                 self.assertEqual(term["review_count"], old_counts[term["text"]])
         self.assertEqual(demo_new["terms"],
                          sorted(demo_new["terms"], key=lambda t: (-t["review_count"], t["text"])))
+
+    def texts(self, rows):
+        return {t["text"]: t["review_count"] for t in Processor().cloud("p", rows)["terms"]}
+
+    def test_phrase_replaces_its_words_when_review_sets_are_identical(self):
+        rows = [review("1", "Wifi fast"), review("2", "wifi fast, wifi")]
+        self.assertEqual(self.texts(rows), {"wifi fast": 2})
+        rows = [review("1", "fast wifi"), review("2", "Fast WiFi!")]  # word can be second
+        self.assertEqual(self.texts(rows), {"fast wifi": 2})
+
+    def test_word_kept_when_it_also_appears_in_other_reviews(self):
+        rows = [review("1", "wifi fast"), review("2", "wifi fast"), review("3", "wifi good")]
+        # "wifi" is in 3 reviews, the phrase in 2: both stay. "fast" matches the phrase's reviews: dropped.
+        self.assertEqual(self.texts(rows), {"wifi": 3, "wifi fast": 2})
+
+    def test_dropped_word_leaves_no_highlight_and_phrase_keeps_counts_and_spans(self):
+        rows = [review("1", "Wifi was fast"), review("2", "wifi fast!")]
+        processor = Processor()
+        cloud = processor.cloud("p", rows)
+        self.assertEqual([t["text"] for t in cloud["terms"]], ["wifi fast"])
+        result = processor.matching("p", cloud["terms"][0]["id"], rows)
+        self.assertEqual(cloud["terms"][0]["review_count"], len(result["reviews"]))
+        by_id = {e["id"]: e for e in result["reviews"]}
+        s = by_id["1"]["spans"][0]
+        self.assertEqual(by_id["1"]["text"][s["start"]:s["end"]], "Wifi was fast")
+
+    def test_freed_slots_go_to_other_terms(self):
+        rows = [review("1", "wifi fast parking"), review("2", "wifi fast parking")]
+        # unigrams wifi/fast/parking all share the same reviews as their phrases.
+        self.assertEqual(self.texts(rows), {"wifi fast": 2, "fast parking": 2})
 
 
 if __name__ == "__main__":
